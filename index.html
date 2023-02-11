@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>live-character-counter</title>
+    <!-- fonts link here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- fonts link here -->
+
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.2) , rgba(255,255,255,0.1));
+
+        }
+        .middle-area{
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 0px 20px  rgb(0,0,0,0.5);
+            max-width: 500px;
+            height: 400px;
+            border-radius: 4px;
+            padding: 22px;
+        }
+        .middle-area h1{
+            text-transform: capitalize;
+            font-weight: 800;
+
+        }
+        #counter-box{
+            width: 100%;
+            height: 100%;
+            resize: none;
+            border: none;
+            outline: none;
+            padding: 22px 12px;
+            
+        }
+        p{
+            margin-top: 12px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #count{
+            color: green;
+        }
+        #counter-box::placeholder{
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="middle-area">
+        <h1>live character counter</h1>
+        <textarea id="counter-box" placeholder="
+        write yor text here...."></textarea>
+        <p>totall character is : <span id="count">0</span></p>
+    </div>
+
+
+
+    <script>
+        const counterBox = document.getElementById('counter-box');
+        counterBox.addEventListener("keyup" , function(){
+            const count = document.getElementById('count');
+            count.innerText = `${counterBox.value.length}` ;
+        })
+    </script>
+</body>
+</html>
